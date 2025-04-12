@@ -1,12 +1,16 @@
+from tensorflow.keras.datasets import fashion_mnist
 import pandas as pd
 
 def load_celeba_attributes(attr_path):
-    """Load CelebA attributes from CSV file"""
-    df = pd.read_csv(r'C:\Users\mitta\OneDrive\Desktop\Company Tasks\facial-fashion-recommender\list_attr_celeba.csv')
-    return df
+    """Load CelebA attributes"""
+    return pd.read_csv(attr_path)
+
+def load_fashion_data():
+    """Load Fashion MNIST images/labels"""
+    return fashion_mnist.load_data()
 
 def get_fashion_categories():
-    """Return Fashion MNIST category mapping"""
+    """Category mapping for Fashion MNIST"""
     return {
         0: 'T-shirt/top',
         1: 'Trouser',
